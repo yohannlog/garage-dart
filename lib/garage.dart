@@ -2,7 +2,7 @@ import 'voiture.dart';
 
 class CabinetComptable {
   final clients = <Object, int>{};
-  int _tresorerie;
+  var _tresorerie = 0;
 
   void addClient(Object client) {
     clients[client] = null;
@@ -12,11 +12,11 @@ class CabinetComptable {
     return 'clients : $clients';
   }
   
-  void addMoney(int s) {
-    _tresorerie = _tresorerie + s;
+  void addMoney() {
+    _tresorerie = _tresorerie + 15;
   }
 
-  int get tresorerie => _tresorerie;
+  dynamic get tresorerie => _tresorerie;
 }
 
 class Garage {
@@ -26,7 +26,7 @@ class Garage {
 
   void nouvellePriseCharge(Vehicule vehicule) {
     _objetsAReparer.add(vehicule);
-    cabinet.addMoney(15);
+    cabinet.addMoney();
   }
 
   @override
